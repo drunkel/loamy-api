@@ -18,9 +18,6 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 
-gem 'devise-jwt'
-
-
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -64,3 +61,4 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+gem 'devise-jwt'
