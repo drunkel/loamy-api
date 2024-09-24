@@ -62,3 +62,5 @@ end
 
 gem "devise", "~> 4.9"
 gem 'devise-jwt'
+
+gem "tailwindcss-rails", "~> 2.7"

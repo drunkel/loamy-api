@@ -15,6 +15,6 @@ Rails.application.routes.draw do
       post "users", to: "users#create"
     end
   end
-  # Defines the root path route ("/")
-  # root "posts#index"
+
+  root "public#index"
 end
