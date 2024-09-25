@@ -1,6 +1,6 @@
 class PublicController < ApplicationController
   def index
-    render "index", layout: false
+    render file: Rails.root.join("public/index.html")
   end
 
   def privacy_policy
