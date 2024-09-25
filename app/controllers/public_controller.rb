@@ -9,6 +9,8 @@ class PublicController < ApplicationController
 
   def waitlist
     if params[:email].present?
+      WaitlistMailer.new_signup(params[:email]).deliver_now
+
       flash.now[:success] = "Thanks! We'll be in touch soon."
       render json: { status: "success", message: flash.now[:success] }
     else
