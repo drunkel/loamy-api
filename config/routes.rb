@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
   root "public#index"
   get "privacy-policy", to: "public#privacy_policy"
+  post "waitlist", to: "public#waitlist"
 end
