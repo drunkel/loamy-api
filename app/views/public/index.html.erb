@@ -26,7 +26,7 @@
   <body class="leading-normal tracking-normal text-gray-200 m-6 bg-cover bg-fixed" style="background-image: url('header.png');">
     <div class="h-full">
       <!--Nav-->
-      <div class="w-full container mx-auto">
+      <div class="w-full px-4 container mx-auto">
         <div class="w-full flex items-center justify-between">
           <a class="flex items-center no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
             Loamy
@@ -51,25 +51,24 @@
       </div>
 
       <!--Main-->
-      <div class="container pt-9 md:pt-9 mx-auto flex flex-wrap flex-col md:flex-row">
+      <div class="container px-4 pt-9 md:pt-9 mx-auto flex flex-wrap flex-col md:flex-row">
         <!--Left Col-->
         <div class="flex flex-col xl:w-2/5 lg:items-start overflow-y-hidden lg:h-screen align-cen">
           <h1 class="my-10 text-4xl md:text-6xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
             Own your ride
           </h1>
-          <span class="leading-normal text-2xl mb-2 text-center md:text-left">
+          <span class="leading-normal text-xl lg:text-2xl mb-2 text-center md:text-left">
             Automatic service reminders<br>
 
           </span>
-          <span class="leading-normal text-2xl mb-2 text-center md:text-left">
+          <span class="leading-normal text-xl lg:text-2xl mb-2 text-center md:text-left">
             Step-by-step guides
           </span>
-          <span class="leading-normal text-2xl mb-12 lg:mb-24 text-center md:text-left">
-           
+          <span class="leading-normal text-xl lg:text-2xl mb-12 lg:mb-24 text-center md:text-left">
              AI-troubleshooting
           </span>
 
-          <%= form_with url: waitlist_path, method: :post, local: false, id: 'waitlistForm', class: "bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4" do |f| %>
+          <%= form_with url: waitlist_path, method: :post, local: false, id: 'waitlistForm', class: "bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-4 lg:pt-6 pb-8 mb-4" do |f| %>
             <div class="mb-4">
               <%= f.label :email, "Join the waitlist", class: "block text-blue-300 py-2 font-bold mb-2" %>
               <%= f.email_field :email, 
@@ -77,7 +76,7 @@
                 placeholder: "you@somewhere.com" %>
             </div>
 
-            <div class="flex items-center justify-between pt-4">
+            <div class="flex items-center justify-between pt-2 lg:pt-4">
               <%= f.submit "Sign Up", 
                 class: "bg-green-600 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out" %>
               <span id="formMessage" class="ml-4 text-sm"></span>
