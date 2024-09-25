@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
 
   root "public#index"
+  get "privacy-policy", to: "public#privacy_policy"
 end
