@@ -67,6 +67,7 @@
              AI-troubleshooting
           </span>
 
+           <span id="formMessage" class="ml-4 text-sm"></span>
           <%= form_with url: waitlist_path, method: :post, local: false, id: 'waitlistForm', class: "w-full lg:pt-6 pb-2 mb-4" do |f| %>
             <div class="mb-2 flex flex-col md:flex-row items-center">
               <%= f.email_field :email, 
