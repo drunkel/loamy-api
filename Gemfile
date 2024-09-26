@@ -19,6 +19,8 @@ gem "jbuilder"
 
 gem 'sendgrid-ruby'
 
+gem 'pg'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
