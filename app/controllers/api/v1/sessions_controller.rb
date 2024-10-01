@@ -1,17 +1,20 @@
 module Api
   module V1
-    class SessionsController < Devise::SessionsController
+    class SessionsController < ApiController
+      skip_before_action :authenticate_user!, only: [ :create ]
       respond_to :json
 
       def create
         user = User.find_by_email(sign_in_params[:email])
 
         if user && user.valid_password?(sign_in_params[:password])
-          @current_user = user
-          render json: {
-            message: "Signed in successfully.",
-            user: user.as_json(only: [ :id, :email ])
-          }, status: :ok
+
+          token = JWT.encode(
+            { user_id: user.id, exp: 24.hours.from_now.to_i },
+            ENV["DEVISE_JWT_SECRET_KEY"],
+            "HS256"
+          )
+          render json: { token: token }, status: :created
         else
           render json: { message: "Invalid email or password." }, status: :unauthorized
         end
