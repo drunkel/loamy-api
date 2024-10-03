@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,11 +14,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post "strava", to: "strava#create"
-      devise_scope :user do
-        post "sessions", to: "sessions#create"
-        delete "sessions", to: "sessions#destroy"
-      end
-      post "users", to: "users#create"
+      get "strava", to: "strava#index"
     end
   end
 
