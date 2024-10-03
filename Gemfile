@@ -18,6 +18,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem 'sendgrid-ruby'
+gem 'rack-cors'
 
 gem 'pg'
 

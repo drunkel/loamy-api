@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  skip_forgery_protection
+  skip_before_action :require_no_authentication
+
   respond_to :json
 
   def respond_with(current_user, _opts = {})
