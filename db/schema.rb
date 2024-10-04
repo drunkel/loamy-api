@@ -10,7 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_23_035408) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_23_035409) do
+  create_table "strava_activities", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "resource_state"
+    t.string "name"
+    t.float "distance"
+    t.integer "moving_time"
+    t.integer "elapsed_time"
+    t.float "total_elevation_gain"
+    t.string "type"
+    t.string "sport_type"
+    t.bigint "strava_id"
+    t.datetime "start_date", precision: nil
+    t.datetime "start_date_local", precision: nil
+    t.string "timezone"
+    t.float "utc_offset"
+    t.string "location_city"
+    t.string "location_state"
+    t.string "location_country"
+    t.string "map_id"
+    t.text "map_summary_polyline"
+    t.string "gear_id"
+    t.string "external_id"
+    t.json "raw_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["strava_id"], name: "index_strava_activities_on_strava_id", unique: true
+    t.index ["user_id"], name: "index_strava_activities_on_user_id"
+  end
+
   create_table "strava_tokens", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "token_type"
@@ -38,5 +67,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_23_035408) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "strava_activities", "users"
   add_foreign_key "strava_tokens", "users"
 end

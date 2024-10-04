@@ -3,4 +3,5 @@ class User < ApplicationRecord
           :jwt_authenticatable, :registerable, jwt_revocation_strategy: Devise::JWT::RevocationStrategies::Null
 
   has_many :strava_tokens
+  has_many :strava_activities
 end
