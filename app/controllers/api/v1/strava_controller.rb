@@ -9,10 +9,20 @@ module Api
         response = exchange_token(params[:code])
 
         if response.success?
-          puts "response.parsed_response: #{response.parsed_response}"
-          render json: response.parsed_response, status: :ok
+          token_data = response.parsed_response
+
+          current_user.strava_tokens.create!(
+            token_type: token_data["token_type"],
+            expires_at: token_data["expires_at"],
+            expires_in: token_data["expires_in"],
+            refresh_token: token_data["refresh_token"],
+            access_token: token_data["access_token"],
+            athlete_id: token_data["athlete"]["id"],
+            athlete_username: token_data["athlete"]["username"]
+          )
+
+          render json: { message: "Strava token saved successfully" }, status: :ok
         else
-          puts "ERROR GETTING TOKEN"
           render json: { error: "Failed to exchange code for tokens" }, status: :bad_request
         end
       end
