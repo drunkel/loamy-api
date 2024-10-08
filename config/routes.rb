@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post "strava", to: "strava#create"
       get "strava", to: "strava#index"
+      get "ride_stats", to: "ride_stats#index"
     end
   end
 
