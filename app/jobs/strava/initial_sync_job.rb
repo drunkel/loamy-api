@@ -26,6 +26,9 @@ module Strava
         page += 1
       end
 
+      # Update the last sync timestamp
+      user.update(last_strava_sync_at: Time.current)
+
       Rails.logger.info("Completed initial sync of bike rides for user #{user_id}")
     end
 
