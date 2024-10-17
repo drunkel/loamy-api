@@ -5,7 +5,7 @@ module Api
         start_date = 1.month.ago.beginning_of_day
         end_date = Time.current.end_of_day
 
-        if params[:range] == "year"
+        if params[:range] == "this_year"
           start_date = 1.year.ago.beginning_of_day
           end_date = Time.current.end_of_day
         end
