@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       post "strava", to: "strava#create"
       get "strava", to: "strava#index"
       get "ride_stats", to: "ride_stats#index"
+      resource :user, only: [ :update ]
     end
   end
 
