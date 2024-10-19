@@ -17,10 +17,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem 'sendgrid-ruby'
-gem 'rack-cors'
+gem "sendgrid-ruby"
+gem "rack-cors"
 
-gem 'pg'
+gem "pg"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -51,8 +51,8 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
-gem 'dotenv', groups: [:development, :test]
-gem 'httparty'
+gem "dotenv", groups: [ :development, :test ]
+gem "httparty"
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -65,7 +65,7 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
-gem 'devise-jwt'
+gem "devise-jwt"
 
 gem "tailwindcss-rails", "~> 2.7"
 
