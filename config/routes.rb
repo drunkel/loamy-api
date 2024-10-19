@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get "strava", to: "strava#index"
       get "ride_stats", to: "ride_stats#index"
       resources :settings, only: [ :update ]
+      resources :services, only: [ :show ]
     end
   end
 
