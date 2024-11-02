@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get "ride_stats", to: "ride_stats#index"
       resources :settings, only: [ :update ]
       resources :services, only: [ :show ]
+      resources :tasks, only: [ :index ]
     end
   end
 

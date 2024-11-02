@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_17_035409) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_02_053409) do
   create_table "strava_activities", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "resource_state"
@@ -55,6 +55,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_17_035409) do
     t.index ["user_id"], name: "index_strava_tokens_on_user_id"
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.string "body"
+    t.datetime "due_at"
+    t.datetime "archived_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -71,4 +82,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_17_035409) do
 
   add_foreign_key "strava_activities", "users"
   add_foreign_key "strava_tokens", "users"
+  add_foreign_key "tasks", "users"
 end

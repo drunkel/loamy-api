@@ -91,4 +91,5 @@ Rails.application.configure do
     authentication:       "plain",
     enable_starttls_auto: true
   }
+  config.hosts << "eb83-2001-569-7372-8a00-3136-56af-f90-2575.ngrok-free.app"
 end
