@@ -33,7 +33,7 @@ Rails.application.configure do
   config.assets.initialize_on_precompile = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.asset_host = "https://d1q0d6kp2aw5kz.cloudfront.net"
+  config.asset_host = "https://d7iuq7pe77zuq.cloudfront.net"
 
 
   # Specifies the header that your server uses for sending files.
