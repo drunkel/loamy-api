@@ -5,6 +5,7 @@ if defined?(AssetSync)
     config.aws_secret_access_key = ENV["AWS_SECRET_ACCESS_KEY"]
     config.fog_directory = ENV["FOG_DIRECTORY"] # your S3 bucket name
     config.fog_region = ENV["FOG_REGION"] # e.g., 'us-east-1'
+    config.aws_iam_roles = true
 
     # Don't delete files from the store
     config.existing_remote_files = "keep"
