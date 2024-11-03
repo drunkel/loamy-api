@@ -25,12 +25,12 @@ if defined?(AssetSync)
     # config.fog_scheme = "http"
     config.fog_directory = ENV["FOG_DIRECTORY"]
 
-    # Invalidate a file on a cdn after uploading files
-    # config.cdn_distribution_id = "12345"
-    # config.invalidate = ['file1.js']
+     # Invalidate a file on a cdn after uploading files
+     # config.cdn_distribution_id = "12345"
+     # config.invalidate = ['file1.js']
 
-    # Increase upload performance by configuring your region
-    # config.fog_region = 'eu-west-1'
+     # Increase upload performance by configuring your region
+     config.fog_region = "us-east-2"
     #
     # Set `public` option when uploading file depending on value,
     # Setting to "default" makes asset sync skip setting the option
