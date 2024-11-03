@@ -1,4 +1,9 @@
+puts "DYLAN: #{ENV["AWS_SECRET_ACCESS_KEY"]}"
 puts "DYLAN: #{ENV["AWS_ACCESS_KEY_ID"]}"
+puts "DYLAN: #{ENV["FOG_DIRECTORY"]}"
+puts "DYLAN: #{ENV["FOG_REGION"]}"
+
+
 AssetSync.configure do |config|
   config.fog_provider = "AWS"
   config.aws_access_key_id = ENV["AWS_ACCESS_KEY_ID"]
