@@ -29,6 +29,7 @@ if defined?(AssetSync)
      # config.cdn_distribution_id = "12345"
      # config.invalidate = ['file1.js']
      config.aws_iam_roles = true
+     config.run_on_precompile = false
 
      # Increase upload performance by configuring your region
      config.fog_region = "us-east-2"
