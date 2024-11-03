@@ -23,7 +23,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body class="leading-normal tracking-normal text-gray-200 m-6 bg-cover bg-fixed" style="background-image: url('header.png');">
+  <body class="leading-normal tracking-normal text-gray-200 m-6 bg-cover bg-fixed" style="background-image: url(<%= asset_path('header.png') %>);">
     <div class="h-full">
       <!--Nav-->
       <div class="w-full px-4 container mx-auto">
@@ -74,7 +74,7 @@
 
         <!--Right Col-->
         <div class="flex flex-col w-full md:w-1/2 p-2 h-screenoverflow-hidden ">
-          <img class="mx-auto w-full lg:w-3/5 md:w-4/5 transform transition hover:scale-105 duration-700 ease-in-out hover:rotate-6" src="app.png" />
+          <img class="mx-auto w-full lg:w-3/5 md:w-4/5 transform transition hover:scale-105 duration-700 ease-in-out hover:rotate-6" src="<%= asset_url('app.png') %>" />
         </div>
 
         <!--Footer-->
