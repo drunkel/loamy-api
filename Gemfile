@@ -72,3 +72,4 @@ gem "tailwindcss-rails", "~> 2.7"
 gem "solid_queue", "~> 1.0"
 
 gem 'asset_sync'
+gem "fog-aws"
