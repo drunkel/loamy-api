@@ -1,0 +1,11 @@
+task: "Dropper Post Service"
+frequency: ---
+:ride_hours: 100
+:conditions:
+- when_slow_return
+- when_sticky
+tools: "Clean rags, manufacturer-specific service kit"
+min_time_estimate: 10
+max_time_estimate: 90
+details: "Clean and grease collar/seals. Check cable tension. Internal service requires specific tools and knowledge."
+level: "Intermediate/Expert"

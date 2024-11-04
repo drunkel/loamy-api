@@ -1,0 +1,12 @@
+task: "Seatpost Maintenance"
+frequency: ---
+:time_based:
+  :months: 3
+:conditions:
+- when_creaking
+- after_wet_rides
+tools: "Grease or carbon paste, torque wrench, cleaning supplies"
+min_time_estimate: 10
+max_time_estimate: 20
+details: "Remove, clean, and regrease post (or apply carbon paste for carbon posts). Check torque settings. Prevent seizure and creaking."
+level: "Beginner"

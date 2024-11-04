@@ -1,0 +1,12 @@
+task: "Shifting Adjustment"
+frequency: ---
+:time_based:
+  :days: 30
+:conditions:
+- when_shifting_imprecise
+- after_crash
+tools: "Metric Allen keys, Phillips screwdriver, repair stand (recommended)"
+min_time_estimate: 15
+max_time_estimate: 30
+details: "Check derailleur hanger alignment, adjust limit screws, index gears, check B-tension. Crucial for preventing chain damage."
+level: "Intermediate"

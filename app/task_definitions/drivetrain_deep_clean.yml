@@ -1,0 +1,11 @@
+task: "Drivetrain Deep Clean"
+frequency: ---
+:time_based:
+  :days: 30
+:conditions:
+- when_grimy
+tools: "Degreaser, chain cleaning tool, old toothbrush, clean rags, chain lube"
+min_time_estimate: 30
+max_time_estimate: 45
+details: "Remove chain if possible. Clean cassette, chainrings, and derailleur pulleys. Use degreaser sparingly and keep away from bearings. Re-lube chain after cleaning."
+level: "Intermediate"

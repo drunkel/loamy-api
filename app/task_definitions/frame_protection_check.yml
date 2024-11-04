@@ -1,0 +1,12 @@
+task: "Frame Protection Check"
+frequency: ---
+:time_based:
+  :days: 30
+:conditions:
+- after_rock_strike
+- after_crash
+tools: "Spare frame protection tape, isopropyl alcohol, clean rags"
+min_time_estimate: 10
+max_time_estimate: 20
+details: "Inspect chain stay protection, down tube guards, and any areas where cables contact frame. Replace worn protection to prevent frame damage."
+level: "Beginner"

@@ -1,0 +1,10 @@
+task: "Chain Maintenance"
+frequency: ---
+:distance_km: 150
+:conditions:
+- when_noisy
+tools: "Chain checker tool, bike-specific chain lube (wet or dry depending on conditions), clean rags"
+min_time_estimate: 10
+max_time_estimate: 15
+details: "Wipe chain thoroughly before lubing. Apply lube to inner chain rollers only, let sit for 5 minutes, then wipe excess thoroughly. Excess lube attracts dirt."
+level: "Beginner"

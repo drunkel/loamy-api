@@ -1,0 +1,12 @@
+task: "Pedal Service"
+frequency: ---
+:time_based:
+  :months: 6
+:conditions:
+- when_clicking
+- after_submersion
+tools: "Pedal wrench, bearing grease, appropriate spanners for your pedal type"
+min_time_estimate: 20
+max_time_estimate: 40
+details: "Check pedal bearings for play, clean and regrease threads, inspect cleats for wear if using clipless. Replace cleats if worn."
+level: "Intermediate"

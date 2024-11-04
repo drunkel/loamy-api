@@ -1,0 +1,12 @@
+task: "Brake Rotor Maintenance"
+frequency: ---
+:time_based:
+  :months: 3
+:conditions:
+- when_braking_performance_decreases
+- after_contamination
+tools: "Isopropyl alcohol, clean rags, torque wrench, rotor truing tool"
+min_time_estimate: 10
+max_time_estimate: 20
+details: "Clean rotors with alcohol, check for warping, verify rotor bolts are torqued correctly. Never touch rotors with bare hands."
+level: "Beginner"

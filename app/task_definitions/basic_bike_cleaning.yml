@@ -1,0 +1,12 @@
+task: "Basic Bike Cleaning"
+frequency: ---
+:conditions:
+- after_wet_ride
+- after_muddy_ride
+:time_based:
+  :days: 7
+tools: "Bucket, soft brushes (different ones for drivetrain/frame), bike-specific cleaner, garden sprayer or hose"
+min_time_estimate: 15
+max_time_estimate: 30
+details: "Clean frame with gentle water pressure, avoid spraying directly into bearings. Use bike-specific cleaner for stubborn dirt. Pay special attention to seals and pivots."
+level: "Beginner"

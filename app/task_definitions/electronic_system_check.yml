@@ -1,0 +1,12 @@
+task: "Electronic System Check"
+frequency: ---
+:time_based:
+  :days: 30
+:conditions:
+- before_long_ride
+- after_firmware_update
+tools: "Manufacturer's app, charging cables, diagnostic tools"
+min_time_estimate: 5
+max_time_estimate: 15
+details: "Check battery levels, update firmware, verify all connections. Includes electronic shifting, power meters, suspension systems."
+level: "Beginner"

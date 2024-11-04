@@ -1,0 +1,10 @@
+task: "Comprehensive Service"
+frequency: ---
+:time_based:
+  :months: 12
+:distance_km: 2000
+tools: "Full workshop toolkit, bearing tools, suspension tools"
+min_time_estimate: 180
+max_time_estimate: 240
+details: "Complete disassembly, deep clean, bearing check/replacement, suspension service, frame inspection. Best done by professional."
+level: "Expert"

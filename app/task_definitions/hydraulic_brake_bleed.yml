@@ -1,0 +1,11 @@
+task: "Hydraulic Brake Bleed"
+frequency: ---
+:time_based:
+  :months: 6
+:conditions:
+- when_spongy_feel
+tools: "Manufacturer-specific brake bleed kit, correct brake fluid (DOT or mineral oil), clean rags, isopropyl alcohol"
+min_time_estimate: 45
+max_time_estimate: 90
+details: "Different systems require different fluids - DOT fluid for SRAM, mineral oil for Shimano. Professional service recommended for novices."
+level: "Expert"

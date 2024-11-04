@@ -1,0 +1,11 @@
+task: "Wheel Maintenance"
+frequency: ---
+:time_based:
+  :days: 30
+:conditions:
+- after_hard_impact
+tools: "Spoke wrench, tension meter (optional), truing stand (optional)"
+min_time_estimate: 20
+max_time_estimate: 45
+details: "Check spoke tension uniformity, wheel true, and hub bearing play. Listen for creaks or clicks."
+level: "Intermediate"

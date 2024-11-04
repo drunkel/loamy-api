@@ -1,0 +1,12 @@
+task: "Accessory Maintenance"
+frequency: ---
+:time_based:
+  :days: 30
+:conditions:
+- when_loose
+- when_noisy
+tools: "Basic tool kit, waterproof grease"
+min_time_estimate: 10
+max_time_estimate: 20
+details: "Check and maintain bottle cages, bags, lights, computers, and mounts. Clean contact points, check mounting bolts, verify functionality."
+level: "Beginner"

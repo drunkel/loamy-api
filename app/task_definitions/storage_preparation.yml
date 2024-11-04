@@ -1,0 +1,9 @@
+task: "Storage Preparation"
+frequency: ---
+:conditions:
+- before_storage
+tools: "Basic tool kit, chain lube, tire inflator"
+min_time_estimate: 30
+max_time_estimate: 60
+details: "Clean thoroughly, lubricate chain and cables, inflate tires to higher pressure, store in dry place. For e-bikes, follow battery storage guidelines."
+level: "Intermediate"

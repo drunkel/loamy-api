@@ -1,0 +1,11 @@
+task: "Frame and Bolt Check"
+frequency: ---
+:time_based:
+  :days: 30
+:conditions:
+- after_crash
+tools: "Torque wrench, metric Allen keys, grease"
+min_time_estimate: 20
+max_time_estimate: 30
+details: "Check all frame bolts with torque wrench, especially stem, handlebar, and suspension pivots. Inspect frame for cracks."
+level: "Intermediate"

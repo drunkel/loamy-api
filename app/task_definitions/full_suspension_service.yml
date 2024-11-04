@@ -1,0 +1,13 @@
+task: "Full Suspension Service"
+frequency: ---
+:time_based:
+  :months: 12
+:ride_hours: 100
+:conditions:
+- when_performance_degraded
+- when_oil_weeping
+tools: "Manufacturer-specific service tools, suspension oils, seals kit, nitrogen charge (if applicable)"
+min_time_estimate: 60
+max_time_estimate: 120
+details: "Complete disassembly, oil and seal replacement, damper service, air spring service. Professional service strongly recommended unless specifically trained."
+level: "Expert"

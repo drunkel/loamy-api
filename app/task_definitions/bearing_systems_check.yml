@@ -1,0 +1,10 @@
+task: "Bearing Systems Check"
+frequency: ---
+:time_based:
+  :months: 3
+:distance_km: 500
+tools: "Metric Allen keys, appropriate bearing tools"
+min_time_estimate: 15
+max_time_estimate: 30
+details: "Check headset, bottom bracket, and hub bearings for smooth operation and play. Clean and regrease if necessary."
+level: "Intermediate"

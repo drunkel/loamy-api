@@ -1,0 +1,10 @@
+task: "Brake System Check"
+frequency: ---
+:time_based:
+  :days: 14
+:distance_km: 200
+tools: "Flashlight, metric Allen keys, rotor truing tool (optional)"
+min_time_estimate: 10
+max_time_estimate: 20
+details: "Check pad thickness (replace under 1.5mm), rotor true, caliper alignment, and lever feel. Listen for pad rub or squealing."
+level: "Beginner"

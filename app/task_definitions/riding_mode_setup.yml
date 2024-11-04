@@ -1,0 +1,10 @@
+task: "Riding Mode Setup"
+frequency: ---
+:conditions:
+- seasonal_change
+- conditions_change
+tools: "Shock pump, tire pressure gauge, suspension setup card"
+min_time_estimate: 20
+max_time_estimate: 40
+details: "Adjust tire pressure, suspension settings, and cockpit setup for seasonal conditions. Record settings for future reference."
+level: "Intermediate"

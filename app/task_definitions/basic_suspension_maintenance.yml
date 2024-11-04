@@ -1,0 +1,12 @@
+task: "Basic Suspension Maintenance"
+frequency: ---
+:time_based:
+  :days: 7
+:conditions:
+- after_wet_ride
+- after_muddy_ride
+tools: "Clean cloth, suspension pump"
+min_time_estimate: 5
+max_time_estimate: 10
+details: "Clean stanchions, check for smooth operation, inspect seals for damage, check sag and rebound settings. Look for oil weeping or unusual noises."
+level: "Beginner"

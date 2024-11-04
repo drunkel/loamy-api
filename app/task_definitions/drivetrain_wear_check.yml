@@ -1,0 +1,10 @@
+task: "Drivetrain Wear Check"
+frequency: ---
+:time_based:
+  :days: 30
+:distance_km: 500
+tools: "Chain wear checker tool, ruler (for cassette/chainring check)"
+min_time_estimate: 5
+max_time_estimate: 10
+details: "Check chain stretch - replace at 0.5% wear for 11/12 speed, 0.75% for others. Inspect cassette teeth for sharks-fin shape."
+level: "Intermediate"

@@ -1,0 +1,13 @@
+task: "Tire Setup and Check"
+frequency: ---
+:pressure_check:
+  :days: 7
+:condition_check:
+  :days: 30
+:sealant_check:
+  :months: 2
+tools: "Digital tire pressure gauge, tubeless sealant, valve core tool"
+min_time_estimate: 5
+max_time_estimate: 20
+details: "Check pressure when tires are cold. Inspect for cuts/wear. For tubeless: check sealant every 2-3 months, more frequently in hot climates."
+level: "Beginner"
