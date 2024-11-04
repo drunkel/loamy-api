@@ -5,17 +5,19 @@
 #   gem "sqlite3"
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   primary:
     <<: *default
-    database: storage/development.sqlite3
+    database: loamy_api_local
+    username: dylanrunkel
+    password: <%= ENV["APP_DATABASE_PASSWORD"] %>
   queue:
     <<: *default
-    database: storage/development_queue.sqlite3
+    database: loamy_api_local_queue
     migrations_paths: db/queue_migrate
 
 # Warning: The database defined as "test" will be erased and
@@ -24,10 +26,10 @@ development:
 test:
   primary:
     <<: *default
-    database: storage/test.sqlite3
+    database: loamy_api_local_test
   queue:
     <<: *default
-    database: storage/test_queue.sqlite3
+    database: loamy_api_local_queue_test
     migrations_paths: db/queue_migrate
 
 production:
