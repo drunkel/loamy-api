@@ -32,7 +32,6 @@ Rails.application.configure do
   config.assets.enabled = true
   config.assets.initialize_on_precompile = true
 
-
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.asset_host = "https://d7iuq7pe77zuq.cloudfront.net"
 
