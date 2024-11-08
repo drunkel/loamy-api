@@ -11,12 +11,20 @@ class Users::SessionsController < Devise::SessionsController
   respond_to :json
   private
   def respond_with(current_user, _opts = {})
-    render json: {
-      status: {
+    if current_user
+      render json: {
+        status: {
         code: 200, message: "Logged in successfully.",
         data: {}
-      }
-    }, status: :ok
+        }
+      }, status: :ok
+    else
+      render json: {
+        status: {
+          code: 401, message: "Couldn't find an active session."
+        }
+      }, status: :unauthorized
+    end
   end
   def respond_to_on_destroy
     if request.headers["Authorization"].present?

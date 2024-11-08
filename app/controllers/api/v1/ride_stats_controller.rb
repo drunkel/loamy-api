@@ -31,7 +31,7 @@ module Api
           time: activities.sum(:moving_time)
         }
 
-        render json: stats, status: :ok
+        render json: { stats: stats, last_strava_sync_at: current_user.last_strava_sync_at }, status: :ok
       end
     end
   end
