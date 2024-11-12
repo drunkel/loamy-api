@@ -16,7 +16,7 @@ module Strava
       per_page = 200 # Maximum allowed by Strava API
 
       loop do
-        bike_rides = fetch_bike_rides(access_token, page, per_page)
+        bike_rides = fetch_bike_rides(access_token, page, per_page, user)
         break if bike_rides.empty?
 
         bike_rides.each do |activity|
@@ -34,7 +34,7 @@ module Strava
 
     private
 
-    def fetch_bike_rides(access_token, page, per_page)
+    def fetch_bike_rides(access_token, page, per_page, user)
       client = Strava::ApiClient.new(user)
       response = client.get("/athlete/activities", { page: page, per_page: per_page })
 
