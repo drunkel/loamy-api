@@ -35,11 +35,8 @@ module Strava
     private
 
     def fetch_bike_rides(access_token, page, per_page)
-      url = "https://www.strava.com/api/v3/athlete/activities"
-      response = HTTParty.get(url,
-        headers: { "Authorization" => "Bearer #{access_token}" },
-        query: { page: page, per_page: per_page }
-      )
+      client = Strava::ApiClient.new(user)
+      response = client.get("/athlete/activities", { page: page, per_page: per_page })
 
       if response.success?
         activities = JSON.parse(response.body)

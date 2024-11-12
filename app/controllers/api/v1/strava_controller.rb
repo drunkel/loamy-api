@@ -29,6 +29,31 @@ module Api
         end
       end
 
+      def fetch_bikes
+        client = Strava::ApiClient.new(current_user)
+
+        gear_ids = current_user.strava_activities
+                              .where.not(gear_id: nil)
+                              .distinct
+                              .pluck(:gear_id)
+
+        bikes = []
+
+        gear_ids.each do |gear_id|
+          response = client.get("/gear/#{gear_id}")
+
+          if response.success?
+            bikes << response.parsed_response
+          else
+            Rails.logger.error("Error fetching bike: #{response.code} - #{response.message}")
+            render json: { error: "Error fetching bike" }, status: :internal_server_error
+            return
+          end
+        end
+
+        render json: { bikes: bikes }, status: :ok
+      end
+
       private
 
       def exchange_token(code)

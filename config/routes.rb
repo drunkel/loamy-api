@@ -19,6 +19,11 @@ Rails.application.routes.draw do
       resources :settings, only: [ :update ]
       resources :services, only: [ :show ]
       resources :tasks, only: [ :index ]
+      resources :strava, only: [ :index, :create ] do
+        collection do
+          get :fetch_bikes
+        end
+      end
     end
   end
 
