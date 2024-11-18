@@ -24,6 +24,8 @@ module Api
                                  .where(type: "Ride")
                                  .where(start_date: start_date..end_date)
 
+        activities = activities.where(gear_id: params[:bike_id]) if params[:bike_id].present?
+
         stats = {
           num_rides: activities.count,
           distance: activities.sum(:distance).round(2),
