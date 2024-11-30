@@ -67,7 +67,7 @@ end
 gem "devise", "~> 4.9"
 gem "devise-jwt"
 
-gem "tailwindcss-rails", "~> 2.7"
+gem "tailwindcss-rails", "~> 3.0"
 
 gem "solid_queue", "~> 1.0"
 
