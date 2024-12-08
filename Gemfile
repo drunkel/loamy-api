@@ -49,6 +49,7 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "rspec-rails"
 end
 
 gem "dotenv", groups: [ :development, :test ]
@@ -70,4 +71,3 @@ gem "devise-jwt"
 gem "tailwindcss-rails", "~> 2.7"
 
 gem "solid_queue", "~> 1.0"
-
