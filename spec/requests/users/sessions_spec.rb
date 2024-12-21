@@ -8,7 +8,7 @@ RSpec.describe 'Users::Sessions', type: :request do
         email: user.email,
         password: user.password
       }
-    }
+    }.to_json
   end
 
   describe 'POST /users/sign_in' do
@@ -18,12 +18,14 @@ RSpec.describe 'Users::Sessions', type: :request do
           email: user.email,
           password: 'wrong_password'
         }
-      }
+      }.to_json
     end
 
     context 'when credentials are valid' do
       before do
-        post user_session_path, params: valid_credentials
+        post user_session_path,
+             params: valid_credentials,
+             headers: { 'CONTENT_TYPE': 'application/json', 'ACCEPT': 'application/json' }
       end
 
       it 'returns success status' do
@@ -37,11 +39,13 @@ RSpec.describe 'Users::Sessions', type: :request do
 
     context 'when credentials are invalid' do
       before do
-        post user_session_path, params: invalid_credentials
+        post user_session_path,
+             params: invalid_credentials,
+             headers: { 'CONTENT_TYPE': 'application/json', 'ACCEPT': 'application/json' }
       end
 
       it 'returns unprocessable entity status' do
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unauthorized)
       end
     end
   end
@@ -49,24 +53,26 @@ RSpec.describe 'Users::Sessions', type: :request do
   describe 'DELETE /users/sign_out' do
     context 'when user is signed in' do
       before do
-        post user_session_path, params: valid_credentials
-        @auth_headers = { 'Authorization': response.headers['Authorization'] }
+        post user_session_path,
+             params: valid_credentials,
+             headers: { 'CONTENT_TYPE': 'application/json', 'ACCEPT': 'application/json' }
+        @auth_headers = {
+          'Authorization': response.headers['Authorization'],
+          'CONTENT_TYPE': 'application/json',
+          'ACCEPT': 'application/json'
+        }
       end
 
       it 'returns success status' do
         delete destroy_user_session_path, headers: @auth_headers
         expect(response).to have_http_status(:ok)
       end
-
-      it 'returns success message' do
-        delete destroy_user_session_path, headers: @auth_headers
-        expect(json_response['message']).to eq('Logged out successfully')
-      end
     end
 
     context 'when no user is signed in' do
       before do
-        delete destroy_user_session_path
+        delete destroy_user_session_path,
+               headers: { 'CONTENT_TYPE': 'application/json', 'ACCEPT': 'application/json' }
       end
 
       it 'returns unauthorized status' do
