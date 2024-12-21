@@ -70,6 +70,6 @@ gem "devise-jwt"
 
 gem "tailwindcss-rails", "~> 2.7"
 
-gem "solid_queue", "~> 1.0"
+gem "solid_queue", "~> 1.1"
 
 gem "factory_bot", "~> 6.5"
