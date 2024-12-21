@@ -11,7 +11,7 @@ module Api
         if response.success?
           token_data = response.parsed_response
 
-          strava_token = current_user.strava_tokens.create!(
+          current_user.strava_tokens.create!(
             token_type: token_data["token_type"],
             expires_at: token_data["expires_at"],
             expires_in: token_data["expires_in"],
