@@ -14,7 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       }, status: :created
     else
       render json: {
-        message: "Account creation failed",
+        message: "Account creation failed. Check your email and password.",
         errors: resource.errors.full_messages
       }, status: :unprocessable_entity
     end
