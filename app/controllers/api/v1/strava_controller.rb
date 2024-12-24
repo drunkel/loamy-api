@@ -31,27 +31,17 @@ module Api
 
       def fetch_bikes
         client = Strava::ApiClient.new(current_user)
+        response = client.get("/athlete")
 
-        gear_ids = current_user.strava_activities
-                              .where.not(gear_id: nil)
-                              .distinct
-                              .pluck(:gear_id)
+        puts("response: #{response.parsed_response}")
 
-        bikes = []
-
-        gear_ids.each do |gear_id|
-          response = client.get("/gear/#{gear_id}")
-
-          if response.success?
-            bikes << response.parsed_response
-          else
-            Rails.logger.error("Error fetching bike: #{response.code} - #{response.message}")
-            render json: { error: "Error fetching bike" }, status: :internal_server_error
-            return
-          end
+        if response.success?
+          bikes = response.parsed_response["bikes"] || []
+          render json: { bikes: bikes }, status: :ok
+        else
+          Rails.logger.error("Error fetching bikes: #{response.code} - #{response.message}")
+          render json: { error: "Error fetching bikes" }, status: :internal_server_error
         end
-
-        render json: { bikes: bikes }, status: :ok
       end
 
       private
