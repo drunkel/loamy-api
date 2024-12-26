@@ -63,6 +63,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "factory_bot", "~> 6.5"
 end
 
 gem "devise", "~> 4.9"
@@ -71,5 +72,3 @@ gem "devise-jwt"
 gem "tailwindcss-rails", "~> 2.7"
 
 gem "solid_queue", "~> 1.0"
-
-gem "factory_bot", "~> 6.5"

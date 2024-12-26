@@ -24,6 +24,7 @@ Rails.application.routes.draw do
           get :fetch_bikes
         end
       end
+      resources :bikes, only: [ :create ]
     end
   end
 
