@@ -26,9 +26,11 @@ development:
 test:
   primary:
     <<: *default
-    database: loamy_api_local_test
+    adapter: sqlite3
+    database: db/test.sqlite3
   queue:
     <<: *default
+    adapter: sqlite3
     database: loamy_api_local_queue_test
     migrations_paths: db/queue_migrate
 
