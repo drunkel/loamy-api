@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_08_035827) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_26_160035) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bikes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "gear_id"
+    t.string "name"
+    t.date "last_service_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gear_id"], name: "index_bikes_on_gear_id"
+    t.index ["user_id"], name: "index_bikes_on_user_id"
+  end
 
   create_table "strava_activities", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -83,6 +94,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_08_035827) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bikes", "users"
   add_foreign_key "strava_activities", "users"
   add_foreign_key "strava_tokens", "users"
   add_foreign_key "tasks", "users"
