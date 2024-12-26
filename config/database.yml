@@ -35,10 +35,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: loamy-api_production
-    username: loamy-api
-    password: <%= ENV["APP_DATABASE_PASSWORD"] %>
+    url: <%= ENV["DATABASE_URL"] %>
   queue:
     <<: *primary_production
-    database: lomay-api_production_queue
     migrations_paths: db/queue_migrate
