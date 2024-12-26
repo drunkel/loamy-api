@@ -1,0 +1,29 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "File Access",
+      "warning_code": 16,
+      "fingerprint": "0f508c5131b3ecffaa0ec93df1bac1ad35129b16e372c7760e158b7147a6091a",
+      "check_name": "FileAccess",
+      "message": "Parameter value used in file name",
+      "file": "app/controllers/api/v1/services_controller.rb",
+      "line": 25,
+      "link": "https://brakemanscanner.org/docs/warning_types/file_access/",
+      "code": "File.read(File.join(Rails.root, \"app\", \"content\", \"services\", \"#{params[:id].to_s.strip}.yml\"))",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Api::V1::ServicesController",
+        "method": "show"
+      },
+      "user_input": "params[:id].to_s.strip",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    }
+  ],
+  "updated": "2024-12-26 11:44:52 -0400",
+  "brakeman_version": "6.2.2"
+}
