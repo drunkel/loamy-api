@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+defaults format: :json do
   namespace :api do
     namespace :v1 do
       post "strava", to: "strava#create"
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
       resources :bikes, only: [ :create ]
     end
   end
+end
 
   root "public#index"
   get "privacy-policy", to: "public#privacy_policy"
