@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :strava_tokens
   has_many :strava_activities
   has_many :tasks
+  has_many :bikes
 
   # You can add a scope to easily find users who need syncing
   scope :needs_strava_sync, -> { where(last_strava_sync_at: nil).or(where("last_strava_sync_at < ?", 1.day.ago)) }
