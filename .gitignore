@@ -40,3 +40,4 @@
 sendgrid.env
 
 db/test.sqlite3
+db/test-queue.sqlite3
