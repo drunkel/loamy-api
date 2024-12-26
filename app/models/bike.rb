@@ -3,4 +3,5 @@ class Bike < ApplicationRecord
 
   validates :name, presence: true
   validates :gear_id, uniqueness: { scope: :user_id }, allow_nil: true
+  has_many :service_intervals
 end
