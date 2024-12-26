@@ -37,6 +37,7 @@ module Api
 
         if response.success?
           bikes = response.parsed_response["bikes"] || []
+          puts("returning bikes: #{bikes}")
           render json: { bikes: bikes }, status: :ok
         else
           Rails.logger.error("Error fetching bikes: #{response.code} - #{response.message}")
