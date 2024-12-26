@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_26_173843) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_26_174125) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,6 +34,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_26_173843) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bike_id"], name: "index_service_intervals_on_bike_id"
+  end
+
+  create_table "service_logs", force: :cascade do |t|
+    t.bigint "bike_id", null: false
+    t.bigint "service_interval_id", null: false
+    t.date "completed_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bike_id"], name: "index_service_logs_on_bike_id"
+    t.index ["service_interval_id"], name: "index_service_logs_on_service_interval_id"
   end
 
   create_table "strava_activities", force: :cascade do |t|
@@ -107,6 +117,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_26_173843) do
 
   add_foreign_key "bikes", "users"
   add_foreign_key "service_intervals", "bikes"
+  add_foreign_key "service_logs", "bikes"
+  add_foreign_key "service_logs", "service_intervals"
   add_foreign_key "strava_activities", "users"
   add_foreign_key "strava_tokens", "users"
   add_foreign_key "tasks", "users"
