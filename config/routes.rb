@@ -26,6 +26,9 @@ defaults format: :json do
         end
       end
       resources :bikes, only: [ :create ]
+      resources :bikes, only: [] do
+        resources :service_intervals, only: [ :index ]
+      end
     end
   end
 end
