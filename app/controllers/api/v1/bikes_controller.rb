@@ -13,6 +13,23 @@ module Api
       rescue ActiveRecord::RecordInvalid => e
         render json: { error: e.message }, status: :unprocessable_entity
       end
+
+      def update
+        bike = current_user.bikes.find(params[:id])
+        bike.update!(bike_params)
+        puts "WAAWAWA"
+        render json: { bike: bike }
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: "Bike not found" }, status: :not_found
+      rescue ActiveRecord::RecordInvalid => e
+        render json: { error: e.message }, status: :unprocessable_entity
+      end
+
+      private
+
+      def bike_params
+        params.require(:bike).permit(:name)
+      end
     end
   end
 end

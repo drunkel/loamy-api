@@ -25,7 +25,7 @@ defaults format: :json do
           get :fetch_bikes
         end
       end
-      resources :bikes, only: [ :create ]
+      resources :bikes, only: [ :create, :update ]
       resources :bikes, only: [] do
         resources :service_intervals, only: [ :index ]
       end

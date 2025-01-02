@@ -53,18 +53,11 @@ RSpec.describe 'Users::Sessions', type: :request do
   describe 'DELETE /users/sign_out' do
     context 'when user is signed in' do
       before do
-        post user_session_path,
-             params: valid_credentials,
-             headers: { 'CONTENT_TYPE': 'application/json', 'ACCEPT': 'application/json' }
-        @auth_headers = {
-          'Authorization': response.headers['Authorization'],
-          'CONTENT_TYPE': 'application/json',
-          'ACCEPT': 'application/json'
-        }
+        login_user(user)
       end
 
       it 'returns success status' do
-        delete destroy_user_session_path, headers: @auth_headers
+        delete destroy_user_session_path, headers: auth_headers
         expect(response).to have_http_status(:ok)
       end
     end
